@@ -8,7 +8,7 @@ export let browser: Browser;
 export let page: Page;
 
 const options = {
-  headless: false,
+  headless: true,
   slowMo: 100
 };
 
