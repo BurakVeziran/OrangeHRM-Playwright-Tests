@@ -8,9 +8,9 @@ class dashboardPage {
     }
     profilePictureCheck = async () => {
         await global.logo.waitFor();
-        global.logo.isVisible();
+        await global.logo.isVisible();
         await global.adminName.waitFor();
-        global.adminName.isVisible();
+        await global.adminName.isVisible();
         // await expect(global.adminName).toEqual('Paul Collings'); will fix
     };
 }
