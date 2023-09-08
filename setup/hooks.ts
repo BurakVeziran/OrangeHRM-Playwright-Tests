@@ -8,7 +8,7 @@ export let browser: Browser;
 export let page: Page;
 
 const options = {
-  headless: true,
+  headless: false,
   slowMo: 100
 };
 
@@ -32,6 +32,7 @@ After(async () => {
   console.log('after pass...');
   await global.page.close();
   await global.context.close();
+
 });
 
 After(async function (scenario) {

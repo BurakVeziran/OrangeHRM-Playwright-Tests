@@ -9,7 +9,6 @@ class loginPage {
     }
     navigateToLoginPage = async () => {
         await global.page.goto(global.BASE_URL);
-        await global.page.waitForLoadState('networkidle');
     };
     fillUsernameAndPassword = async () => {
         await global.usernameInput.waitFor();
