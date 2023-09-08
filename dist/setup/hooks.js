@@ -5,7 +5,7 @@ const playwright = require('playwright');
 const { BeforeAll, Before, After, AfterAll, Status } = require('@cucumber/cucumber');
 const cucumber = require('@cucumber/cucumber');
 const options = {
-    headless: false,
+    headless: true,
     slowMo: 100
 };
 BeforeAll(async () => {
