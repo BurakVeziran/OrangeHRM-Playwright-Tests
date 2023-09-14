@@ -9,7 +9,6 @@ export let page: Page;
 
 const options = {
   headless: true,
-  slowMo: 100
 };
 
 setDefaultTimeout(60 * 1000);

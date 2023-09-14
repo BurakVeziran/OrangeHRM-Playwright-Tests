@@ -5,8 +5,7 @@ const playwright = require('playwright');
 const { BeforeAll, Before, After, AfterAll, Status, setDefaultTimeout } = require('@cucumber/cucumber');
 const cucumber = require('@cucumber/cucumber');
 const options = {
-    headless: false,
-    slowMo: 100
+    headless: true,
 };
 setDefaultTimeout(60 * 1000);
 BeforeAll(async () => {
