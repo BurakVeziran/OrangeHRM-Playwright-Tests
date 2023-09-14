@@ -1,5 +1,5 @@
 const playwright = require('playwright');
-const { BeforeAll, Before, After, AfterAll , Status } = require('@cucumber/cucumber');
+const { BeforeAll, Before, After, AfterAll , Status, setDefaultTimeout } = require('@cucumber/cucumber');
 const cucumber = require('@cucumber/cucumber');
 import {chromium, Browser, Page, Locator} from 'playwright';
 
@@ -11,6 +11,8 @@ const options = {
   headless: true,
   slowMo: 100
 };
+
+setDefaultTimeout(60 * 1000);
 
 BeforeAll(async () => {
   console.log('before all ...');
@@ -41,3 +43,4 @@ After(async function (scenario) {
     this.attach(buffer, 'image/png');
   }
 });
+

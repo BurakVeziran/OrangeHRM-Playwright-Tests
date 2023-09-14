@@ -2,12 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.page = exports.browser = void 0;
 const playwright = require('playwright');
-const { BeforeAll, Before, After, AfterAll, Status } = require('@cucumber/cucumber');
+const { BeforeAll, Before, After, AfterAll, Status, setDefaultTimeout } = require('@cucumber/cucumber');
 const cucumber = require('@cucumber/cucumber');
 const options = {
-    headless: true,
+    headless: false,
     slowMo: 100
 };
+setDefaultTimeout(60 * 1000);
 BeforeAll(async () => {
     console.log('before all ...');
     global.browser = await playwright['chromium'].launch(options);

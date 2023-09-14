@@ -23,5 +23,5 @@ Then('I click login button', async function () {
 Then('I should be logged in', async function () {
     this.page = page;
     const DashboardPage = new dashboardPage_1.dashboardPage();
-    await DashboardPage.profilePictureCheck();
+    await DashboardPage.loginCheck();
 });

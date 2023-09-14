@@ -1,8 +1,9 @@
 import { expect } from "@playwright/test";
 export class dashboardPage {
   constructor() {
-    global.logo = global.page.getByRole('banner').getByRole('img', { name: 'profile picture' });
-    global.adminName = global.page.getByRole('banner').getByText('Paul Collings');
+    global.profilePicture = global.page.getByRole('banner').getByRole('img', { name: 'profile picture' });
+    global.header= global.page.locator('div').filter({ hasText: /^Dashboard$/ });
+    global.logo= global.page.getByRole('link', { name: 'client brand banner' });
     global.searchInput = global.page.getByPlaceholder('Search')
     global.admin = global.page.getByRole('link', { name: 'Admin' });
     global.PIM = global.page.getByRole('link', { name: 'PIM' });
@@ -17,12 +18,13 @@ export class dashboardPage {
     global.maintenance = global.page.getByRole('link', { name: 'Maintenance' });
     global.claim = global.page.getByRole('link', { name: 'Claim' });
   }
-  public profilePictureCheck = async () => {
+  public loginCheck = async () => {
+    await global.profilePicture.waitFor()
+    await global.profilePicture.isVisible();
     await global.logo.waitFor()
     await global.logo.isVisible();
-    await global.adminName.waitFor()
-    await global.adminName.isVisible();
-    // await expect(global.adminName).toEqual('Paul Collings'); will fix
+    await global.header.waitFor()
+    await global.header.isVisible();
   }
 
   public searchWrite = async () => {
