@@ -39,6 +39,9 @@ class dashboardPage {
         await global.performanceButton.isVisible();
         await (0, test_1.expect)(global.claim).not.toBeVisible();
     };
+    goToPimPage = async () => {
+        await global.PIM.click();
+    };
 }
 exports.dashboardPage = dashboardPage;
 module.exports = { dashboardPage };

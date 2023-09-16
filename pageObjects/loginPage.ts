@@ -17,7 +17,6 @@ export class loginPage {
   }
 
   public clickLoginButton = async () => {
-
     await global.loginButton.click();
   }
 }

@@ -4,7 +4,9 @@ Feature: Dashboard Page
   I want to test
   Dashboard menu search
 
-  Scenario: As a user I should be able search in menus
+  Background:
     Given I am on the dashboard screen
+
+  Scenario: As a user I should be able search in menus
     And I write Performance in search
     Then Only performance menu button is should be visible
